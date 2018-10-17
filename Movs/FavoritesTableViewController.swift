@@ -6,4 +6,28 @@
 //  Copyright © 2018 Walan Marcel Teles Oliveira. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class FavoritesTableViewController: UITableViewController {
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(MovieStore.sharedInstance.allMovies.count)
+        
+        
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+}

@@ -14,9 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let movieStore = MovieStore.sharedInstance
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let rootViewController = window!.rootViewController as! UITabBarController
+        rootViewController.selectedIndex = 0;
+        let navViewController = rootViewController.selectedViewController! as! UINavigationController
+        let popularMoviesViewController = navViewController.topViewController as! PopularMoviesViewController
+        
+        popularMoviesViewController.movieStore = movieStore
+
         return true
     }
 
