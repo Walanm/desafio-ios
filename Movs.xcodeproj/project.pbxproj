@@ -17,6 +17,7 @@
 		EA9EBFE1217155FA0024BDAC /* MovieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9EBFE0217155FA0024BDAC /* MovieStore.swift */; };
 		EA9EBFE3217156C70024BDAC /* MovieDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9EBFE2217156C70024BDAC /* MovieDBAPI.swift */; };
 		EA9EBFE5217157660024BDAC /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9EBFE4217157660024BDAC /* FavoritesTableViewController.swift */; };
+		EAAE0E8821776F9D00A15012 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0E8721776F9D00A15012 /* MovieDetailViewController.swift */; };
 		EABB69F821744D12008DE164 /* PopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB69F721744D12008DE164 /* PopularMoviesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		EA9EBFE0217155FA0024BDAC /* MovieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStore.swift; sourceTree = "<group>"; };
 		EA9EBFE2217156C70024BDAC /* MovieDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBAPI.swift; sourceTree = "<group>"; };
 		EA9EBFE4217157660024BDAC /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		EAAE0E8721776F9D00A15012 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		EABB69F721744D12008DE164 /* PopularMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				EA9EBFE4217157660024BDAC /* FavoritesTableViewController.swift */,
 				EABB69F721744D12008DE164 /* PopularMoviesViewController.swift */,
 				EA1D6241217626AE009538A0 /* MovieCollectionViewCell.swift */,
+				EAAE0E8721776F9D00A15012 /* MovieDetailViewController.swift */,
 			);
 			path = Movs;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				EA9EBFCA2171238C0024BDAC /* AppDelegate.swift in Sources */,
 				EA9EBFE5217157660024BDAC /* FavoritesTableViewController.swift in Sources */,
 				EA9EBFE1217155FA0024BDAC /* MovieStore.swift in Sources */,
+				EAAE0E8821776F9D00A15012 /* MovieDetailViewController.swift in Sources */,
 				EA1D6242217626AE009538A0 /* MovieCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

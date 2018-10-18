@@ -1,3 +1,20 @@
+# Melhor visualizado em iphone X e iphone 8 Plus
+
+# Features implementadas:
+- Tela de Splash;
+- Layout em abas, contendo na primeira aba a tela de grid de filmes e na segunda aba a tela de lista de filmes favoritados no app;
+- Tela de grid de filmes trazendo a lista de filmes populares da [API](https://developers.themoviedb.org/3/movies/get-popular-movies).
+
+- Ao clicar em um filme do grid deve navegar para a tela de detalhe do filme;
+- Tela de Detalhe do filme deve conter ação para favoritar o filme;
+- Tela de Detalhe do filme deve conter gênero do filme por extenso (ex: Action, Horror, etc); Use esse [request](https://developers.themoviedb.org/3/genres/get-movie-list) da API para trazer a lista.
+- Tela de lista de favoritos persistido no app entre sessões;
+- Tela de favoritos deve permitir desfavoritar um filme.
+
+- Tela de grid com busca local;
+- Scroll Infinito para fazer paginação da API de filmes populares;
+- Célula do Grid de filmes com informação se o filme foi favoritado no app ou não;
+
 
 ## Bem vindo
 

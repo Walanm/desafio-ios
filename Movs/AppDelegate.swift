@@ -25,6 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let popularMoviesViewController = navViewController.topViewController as! PopularMoviesViewController
         
         popularMoviesViewController.movieStore = movieStore
+        
+        MovieDBAPI.sharedInstance.getGenres() { (result) in
+            switch result {
+            case .success(let genreList):
+                self.movieStore.allGenres = genreList
+            case .failure(let error):
+                fatalError("error: \(error.localizedDescription)")
+            }
+        }
+        
+        try MovieStore.sharedInstance.favoriteMovies = MovieStore.sharedInstance.getMoviesFromDisk()
 
         return true
     }
@@ -37,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        movieStore.saveMoviesToDisk(movies: MovieStore.sharedInstance.favoriteMovies)
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -50,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        movieStore.saveMoviesToDisk(movies: MovieStore.sharedInstance.favoriteMovies)
         self.saveContext()
     }
 

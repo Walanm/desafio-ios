@@ -8,12 +8,14 @@
 
 import Foundation
 
+// Estrutura compatível com as tags do request de generos da API
 struct FetchedGenres: Codable {
     
     let genres: [Genre]
     
 }
 
+// Estrutura compatível com as tags do request de filmes da API
 struct FetchedMovies: Codable {
     
     let results: [Movie]
@@ -25,13 +27,14 @@ enum Result<Value> {
     case failure(Error)
 }
 
+// Singleton que gerencia a comunicação com a API
 class MovieDBAPI: NSObject {
     
     static let sharedInstance = MovieDBAPI()
     
-    func getMovies(completion: ((Result<[Movie]>) -> Void)?) {
+    func getMovies(page: Int, completion: ((Result<[Movie]>) -> Void)?) {
         
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=d70bcce17ca9372d7b63847f4b703452") else { fatalError("Could not create URL from components")}
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?page=" + String(page) + "&api_key=d70bcce17ca9372d7b63847f4b703452") else { fatalError("Could not create URL from components")}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -55,7 +58,7 @@ class MovieDBAPI: NSObject {
                         // object, and [Post].self for JSON representing an array of
                         // Post objects
                         let movies = try decoder.decode(FetchedMovies.self, from: jsonData)
-                        print(movies.results)
+                        //print(movies.results)
                         completion?(.success(movies.results))
                     } catch {
                         completion?(.failure(error))
@@ -90,7 +93,7 @@ class MovieDBAPI: NSObject {
                     
                     do {
                         let genreList = try decoder.decode(FetchedGenres.self, from: jsonData)
-                        print(genreList)
+                        //print(genreList.genres)
                         completion?(.success(genreList.genres))
                     } catch {
                         completion?(.failure(error))
